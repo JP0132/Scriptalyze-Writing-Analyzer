@@ -22,12 +22,19 @@ CVs and personal writing often contain private information. Using cloud-based AI
 
 - Ensure you have node installed.
 - Have Ollama and models you want to use ready.
-- Enter the API for Gemini and ChatGPT if using.
+- Enter the API for Gemini if using.
 - Code editor, I used Visual Studio Code (VS Code).
 - Compatible browser like Chrome, Firefox and etc.
 - Poppler is installed on your machine: https://poppler.freedesktop.org/
 
 # How it works and looks:
+<img width="1130" height="1227" alt="Screenshot 2025-12-17 180618" src="https://github.com/user-attachments/assets/39c1bfba-46d2-4bca-909a-dc3c02789570" />
+<img width="1118" height="1245" alt="Screenshot 2025-12-17 180557" src="https://github.com/user-attachments/assets/ae862be4-0d6a-40c6-9863-1e58179752e4" />
+<img width="1118" height="1194" alt="Screenshot 2025-12-17 161032" src="https://github.com/user-attachments/assets/22ca8a4f-9f94-41cc-8cf2-2e7cfed5125a" />
+<img width="1122" height="1153" alt="Screenshot 2025-12-17 173203" src="https://github.com/user-attachments/assets/1bf4b886-44b0-4833-a3e1-81d29ac8b40e" />
+<img width="1234" height="638" alt="Screenshot 2025-12-17 163343" src="https://github.com/user-attachments/assets/993dd79f-167f-492f-965e-4f278a395bec" />
+<img width="1085" height="1226" alt="Screenshot 2025-12-17 160933" src="https://github.com/user-attachments/assets/1d750e5b-624f-4882-b881-ade3b817377b" />
+<img width="1059" height="516" alt="Screenshot 2025-12-17 152220" src="https://github.com/user-attachments/assets/81139830-cf7e-486a-98cc-fbd58e5d7f43" />
 
 # How to run it?
 
@@ -66,4 +73,4 @@ _If the server fails to start, the port may be conflicting in that case, change 
 npm run dev
 ```
 
-6. As long as the models you have installed and models in the frontend match, with the correct capabilities (vision or non-vision) it should work.
+9. As long as the models you have installed and models in the frontend match, with the correct capabilities (vision or non-vision) the backend will figure out which method to run for the given input.

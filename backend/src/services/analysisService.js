@@ -18,50 +18,6 @@ const analysisSchema = {
   required: ["summary", "strengths", "weaknesses", "improvements", "score"],
 };
 
-// export const AIResponseFormat = `
-//       interface Feedback {
-//       overallScore: number; //max 100
-//       writing: {
-//         score: number; //rate based on writing skill
-//         tips: {
-//           type: "good" | "improve";
-//           tip: string; //give 3-4 tips
-//         }[];
-//       };
-//       toneAndStyle: {
-//         score: number; //max 100
-//         tips: {
-//           type: "good" | "improve";
-//           tip: string; //make it a short "title" for the actual explanation
-//           explanation: string; //explain in detail here
-//         }[]; //give 3-4 tips
-//       };
-//       content: {
-//         score: number; //max 100
-//         tips: {
-//           type: "good" | "improve";
-//           tip: string; //make it a short "title" for the actual explanation
-//           explanation: string; //explain in detail here
-//         }[]; //give 3-4 tips
-//       };
-//       structure: {
-//         score: number; //max 100
-//         tips: {
-//           type: "good" | "improve";
-//           tip: string; //make it a short "title" for the actual explanation
-//           explanation: string; //explain in detail here
-//         }[]; //give 3-4 tips
-//       };
-//       skills: {
-//         score: number; //max 100
-//         tips: {
-//           type: "good" | "improve";
-//           tip: string; //make it a short "title" for the actual explanation
-//           explanation: string; //explain in detail here
-//         }[]; //give 3-4 tips
-//       };
-//     }`;
-
 const analyzeDocument = async (filePath, mimeType) => {
   // 1. Get the model
   const model = genAI.getGenerativeModel({
@@ -108,7 +64,7 @@ const textAnalysis = async (textInput, customInstructions) => {
   `;
 
   const prompt2 = `You are an expert in writing analysis.
-      Please analyse and rate this wrting and suggest how to improve it.
+      Please analyse and rate this writing and suggest how to improve it.
       The rating can be low if the writing is bad.
       Be thorough and detailed. Don't be afraid to point out any mistakes or areas for improvement.
       If there is a lot to improve, don't hesitate to give low scores. This is to help the user to improve their writing skills.

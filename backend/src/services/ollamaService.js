@@ -108,8 +108,8 @@ const analyseNonVisionDocument = async (
 
   let content = response.message.content;
 
-  // 5. CLEANUP: Remove <think> tags (Specific to DeepSeek R1)
-  // DeepSeek R1 often outputs: <think>...reasoning...</think> { json }
+  // 5. CLEANUP: Remove <think> tags
+  // A reasoning model may often output with  <think></think>
   content = content.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
 
   // Remove markdown code blocks if present (e.g. ```json ... ```)
@@ -171,8 +171,8 @@ const analyseVisionDocument = async (
 
   let content = response.message.content;
 
-  // 5. CLEANUP: Remove <think> tags (Specific to DeepSeek R1)
-  // DeepSeek R1 often outputs: <think>...reasoning...</think> { json }
+  // 5. CLEANUP: Remove <think> tags
+  // A reasoning model may often output with  <think></think>
   content = content.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
 
   // Remove markdown code blocks if present (e.g. ```json ... ```)
@@ -196,11 +196,6 @@ const analyseText = async (textInput, customInstructions, model) => {
   console.log(`in text only input ${model} analyse document`);
 
   let result;
-
-  // if (typeof pdfParse !== "function") {
-  //   console.error("PDF-PARSE DEBUG:", pdfParse);
-  //   throw new Error("pdf-parse library did not load correctly.");
-  // }
 
   // 3. Prepare Prompt
   const prompt = `You are an expert in writing analysis.
@@ -227,8 +222,8 @@ const analyseText = async (textInput, customInstructions, model) => {
 
   let content = response.message.content;
 
-  // 5. CLEANUP: Remove <think> tags (Specific to DeepSeek R1)
-  // DeepSeek R1 often outputs: <think>...reasoning...</think> { json }
+  // 5. CLEANUP: Remove <think> tags
+  // A reasoning model may often output with  <think></think>s
   content = content.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
 
   // Remove markdown code blocks if present (e.g. ```json ... ```)
